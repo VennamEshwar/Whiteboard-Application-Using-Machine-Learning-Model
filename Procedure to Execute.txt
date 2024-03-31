@@ -1,0 +1,31 @@
+Procedure to Execute:
+
+1. Creating a Header File for Pen Selection:
+   - We start by making a file where users can pick the pen they want to use and the color they want to draw with. This information is saved in a list.
+
+2. Declaring Variables:
+   - Next, we set up variables to keep track of the header, color, brush thickness, and canvas for drawing.
+
+3. Capturing Live Video:
+   - Using a library called OpenCV, we capture live video from a webcam. This video will show the user's hand movements.
+
+4. Detecting Hands:
+   - We use a library called MediaPipe to detect hands in the video. MediaPipe offers various functions for hand detection, which helps us identify where the user's hands are.
+
+5. Processing Frames:
+   - We read each frame from the webcam and convert it to RGB format. Then, we use MediaPipe to detect hands in each frame using the "hands.process()" function.
+
+6. Locating Hand Landmarks:
+   - Once hands are detected, we find specific points on the hand, called landmarks, which help us understand hand movements. We highlight these landmarks on the hand using circles and connect them to show the hand's shape.
+
+7. Finding Hand Tips:
+   - We determine the tips of the index and middle fingers by analyzing the hand's landmarks. This helps us understand which fingers are up and which ones are down.
+
+8. Checking Finger Positions:
+   - By comparing the positions of finger landmarks, we can tell if a finger is up or down. For example, if the tip of a finger is below the central landmark of that finger, it means the finger is down.
+
+9. Selection Mode:
+    - If two fingers are up, the system enters selection mode. Here, users can choose different colors for drawing by selecting from the header.
+
+10. Drawing Mode:
+    - If the index finger is up, the system enters drawing mode. It detects the finger's position and uses it to draw lines on the screen. Users can choose different colors for drawing.
